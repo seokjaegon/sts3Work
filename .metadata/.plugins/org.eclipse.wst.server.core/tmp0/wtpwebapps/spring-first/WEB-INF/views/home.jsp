@@ -17,7 +17,6 @@
 <P>  The time on the server is ${serverTime}. </P>
 <a href="first">[이동]</a>
 
-
 <hr>
 
 <img src="resources/images/풍경사진.jpg">

@@ -15,3 +15,14 @@
 0:0:0:0:0:0:0:1 - - [01/Feb/2024:14:44:16 +0900] "GET /first/app/ HTTP/1.1" 200 209
 0:0:0:0:0:0:0:1 - - [01/Feb/2024:15:13:32 +0900] "GET /first/ HTTP/1.1" 200 262
 0:0:0:0:0:0:0:1 - - [01/Feb/2024:15:13:32 +0900] "GET /first/resources/images/%ED%92%8D%EA%B2%BD%EC%82%AC%EC%A7%84.jpg HTTP/1.1" 200 96912
+127.0.0.1 - - [01/Feb/2024:15:14:04 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [01/Feb/2024:15:14:12 +0900] "GET /first/ HTTP/1.1" 200 262
+0:0:0:0:0:0:0:1 - - [01/Feb/2024:15:14:12 +0900] "GET /first/resources/images/%ED%92%8D%EA%B2%BD%EC%82%AC%EC%A7%84.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [01/Feb/2024:15:14:26 +0900] "GET /first/first HTTP/1.1" 200 202
+0:0:0:0:0:0:0:1 - - [01/Feb/2024:15:14:27 +0900] "GET /first/second HTTP/1.1" 200 159
+0:0:0:0:0:0:0:1 - - [01/Feb/2024:15:20:15 +0900] "GET /first/ HTTP/1.1" 200 338
+0:0:0:0:0:0:0:1 - - [01/Feb/2024:15:20:16 +0900] "GET /first/resources/images/%ED%92%8D%EA%B2%BD%EC%82%AC%EC%A7%84.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [01/Feb/2024:15:20:16 +0900] "GET /first/resources/css/style.css HTTP/1.1" 200 56
+0:0:0:0:0:0:0:1 - - [01/Feb/2024:15:31:09 +0900] "GET /first/ HTTP/1.1" 200 338
+0:0:0:0:0:0:0:1 - - [01/Feb/2024:15:31:09 +0900] "GET /first/resources/images/%ED%92%8D%EA%B2%BD%EC%82%AC%EC%A7%84.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [01/Feb/2024:15:31:09 +0900] "GET /first/resources/css/style.css HTTP/1.1" 304 -
