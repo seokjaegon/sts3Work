@@ -61,7 +61,14 @@ Spring Legacy Project
 Lombok 설치
 1. lombok 다운로드 후 실행하여 개발도구(sts)에 설치
 2. maven repository에서 해당 라이브러리를 복사하여 pom.xml에 추가
-
+-------------------------------------------
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.30</version>
+    <scope>provided</scope>
+</dependency>
+--------------------------------------------
 	lombok 활용
 	1) getter와 setter 자동 생성
 	2) log 출력용 라이브러리 - Slf4j(Log)
