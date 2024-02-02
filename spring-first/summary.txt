@@ -16,3 +16,4 @@ Static Resources(정적 자원 처리)
 Server Port 변경
   Servers > Tomcat v9.0 Server... > server.xml
   63번째 줄에서 port="8080"을 다른 번호로 변경.
+ 
