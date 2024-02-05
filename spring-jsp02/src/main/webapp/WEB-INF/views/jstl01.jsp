@@ -62,6 +62,8 @@
 		</c:choose>
 	</c:forEach>
 	</ul>
+	<hr>
+	<a href="today">[이동]</a>
 </body>
 </html>
 
