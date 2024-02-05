@@ -3,5 +3,7 @@ C:\sts3-work\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2368886228.in
 \spring-first\src\main\java
 C:\sts3-work\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2432769312.index
 \self-introduction\src\main\java
+C:\sts3-work\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2766883732.index
+\spring-jsp02\src\main\java
 C:\sts3-work\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3083039463.index
 \spring-jsp01\src\main\java

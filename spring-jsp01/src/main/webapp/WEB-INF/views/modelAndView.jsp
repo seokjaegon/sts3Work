@@ -40,7 +40,8 @@
 	logbtn.onclick = function() {
 		let idv = idinput.value;
 		let pwv = pwinput.value;
-		let str = "login?id=" + idv + "&pwd=" + pwv;
+		let str = `login?id=\${idv}&pwd=\${pwv}`;
+		console.log(str);
 		location.href=str;
 	}
 </script>
