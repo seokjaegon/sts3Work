@@ -57,6 +57,6 @@ public int amount(int a, int b) {
 </table>
 <hr>
 <a href="jstl_1">[이동]</a>
-<jsp:include page="today.jsp"/>
+<!--<jsp:include page="today.jsp"/>-->
 </body>
 </html>
