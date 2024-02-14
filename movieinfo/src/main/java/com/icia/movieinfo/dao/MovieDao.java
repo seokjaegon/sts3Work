@@ -17,6 +17,16 @@ public interface MovieDao {
 	
 	//영화 정보 입력
 	void insertMovie(MovieDto movie);
-}
+	
+	//영화 정보 상세보기
+	MovieDto selectMovie(Integer m_code);
+	
+	//영화 정보 수정
+	void updateMovie(MovieDto movie);
+	
+	//영화 정보 삭제
+	void deleteMovie(Integer m_code);
+	
+}//interface end
 
 //java <-> Mybatis(xml)

@@ -50,6 +50,8 @@ public class MovieService {
 		String pageHtml = getPaging(pageNum, listCnt);
 		model.addAttribute("paging", pageHtml);
 		
+		session.setAttribute("pageNum", pageNum);
+		
 		return "home";
 	}
 
@@ -61,7 +63,7 @@ public class MovieService {
 		//페이지 당 보여질 번호 개수
 		int pageCnt = 2;
 		
-		PagingUtil paging = new PagingUtil(maxNum, pageCnt, listCnt, pageCnt);
+		PagingUtil paging = new PagingUtil(maxNum, pageNum, listCnt, pageCnt);
 		
 		pageHtml = paging.makePaging();
 		
@@ -125,4 +127,88 @@ public class MovieService {
 		mf.transferTo(file);//하드디스크(경로상의 폴더)에 저장
 		movie.setP_sysname(sysname);
 	}
+	
+	//상세보기 처리 메소드(수정처리에서도 활용)
+	public void getMovie(Integer m_code, Model model) {
+		log.info("getMovie()");
+		//DB에서 데이터 가져오기
+		MovieDto movie = mDao.selectMovie(m_code);
+		//model에 담기
+		model.addAttribute("movie", movie);
+	}
+
+	public String movieUpdate(List<MultipartFile> files, MovieDto movie, HttpSession session, RedirectAttributes rttr) {
+		log.info("movieUpdate()");
+		String msg = null;
+		String view = null;
+		String poster = movie.getP_sysname();//기존 파일(포스터)
+		
+		try {
+			if(!files.get(0).isEmpty()) {
+				fileUpload(files, session, movie);
+				
+				//기존 파일 삭제(포스터 삭제)
+				if(poster != null) {
+					fileDelete(poster, session);
+				}
+			}
+			mDao.updateMovie(movie);
+			
+			view = "redirect:detail?m_code=" + movie.getM_code();
+			msg = "수정 성공";
+		} catch (Exception e) {
+			e.printStackTrace();
+			view = "redirect:updateFrm?m_code=" + movie.getM_code();
+			msg = "수정 실패";
+		}
+		
+		rttr.addFlashAttribute("msg", msg);
+		return view;
+	}
+
+	private void fileDelete(String poster, 
+							HttpSession session) 
+							throws Exception{
+		log.info("fileDelete()");
+		
+		String realPath = session.getServletContext()
+				.getRealPath("/");
+		realPath += "resources/upload/" + poster;
+		File file = new File(realPath);
+		if(file.exists()) {
+			file.delete();
+		}
+		
+	}
+
+	public String movieDelete(Integer m_code,
+						   HttpSession session, 
+						   RedirectAttributes rttr) {
+		log.info("movieDelete()");
+		String view = null;
+		String msg = null;
+		
+		//영화 코드로 파일명 구하기
+		MovieDto movie = mDao.selectMovie(m_code);
+		String poster = movie.getP_sysname();//파일명
+		
+		try {
+			if(poster != null) {
+				fileDelete(poster, session);
+			}
+			mDao.deleteMovie(m_code);
+			
+			view = "redirect:/?pageNum=1";
+			msg = "삭제 성공";
+		} catch (Exception e) {
+			e.printStackTrace();
+			view = "redirect:detail?m_code=" + m_code;
+			msg = "삭제 실패";
+		}
+		
+		rttr.addFlashAttribute("msg", msg);
+		
+        return view;
+	}
+	
 }// class end
