@@ -7,7 +7,7 @@ html {
 body {
 	margin: 0;
 	height: 100%;
-	background-color: #DFDFE1;
+	background-color: #006BB9;
 }
 a {
 	text-decoration: none;
@@ -25,7 +25,7 @@ a:visited {
 * top-bar, footer-bar style
 */
 .top-bar {
-	background-color: #071313;
+	background-color : #006BB9;
 	color: #fff;
 	line-height: 50px;
 	display: flex;
@@ -39,7 +39,7 @@ a:visited {
 	border-radius: 10px;
 }
 .footer-bar {
-	background-color: #686868;
+	background-color: #006BB9;
 	color: #fff;
 	height: 60px;
 	line-height: 60px;

@@ -5,8 +5,10 @@
 <html>
 <head>
 	<title>Home</title>
+	<link rel="stylesheet" href="resources/css/style.css">
 </head>
 <body>
+<jsp:include page="header.jsp"/>
 <h1>
 	Hello world!  
 </h1>
@@ -20,5 +22,7 @@
 <p> 생일 : ${person1.dateData} </p>
 
 <a href="mavCase">[이동]</a>
+
+<jsp:include page="footer.jsp"/>
 </body>
 </html>
